@@ -1,0 +1,243 @@
+/* Estilos/Landing-Page.css */
+
+:root {
+  --primary1:#A8C6FA;
+  --primary2:#A9E5BB;
+  --secondary1:#F5F5F5;
+  --secondary2:#FFFFFF;
+  --secondary3:#FFB3AB;
+  --transition: all 0.3s ease;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --border-radius: 8px;
+}
+
+/* Reset y estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--dark);
+  background-color: #f8f9fa;
+}
+
+/* Header con ID específico */
+.header-web {
+  background-color: var(--primary2);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 10px 0;
+}
+.barranavegadora {
+  display: flex;
+  align-items: center; /* Alinea verticalmente los items */
+  justify-content: space-between; /* Distribuye el espacio */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+#imagenlink {
+  width: 5rem;
+  display: flex; /* Asegura que la imagen se comporte como flex item */
+  align-items: center; /* Centra verticalmente la imagen */
+}
+
+#lista-nav {
+  display: flex;
+  gap: 20px; /* Reduce un poco el gap para mejor distribución */
+  margin: 0;
+  padding: 0;
+  align-items: center; /* Centra verticalmente los items */
+}
+  
+#lista-nav .objs-org-horizontal {
+  list-style: none;
+}
+
+#lista-nav .link-texto {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+#lista-nav .link-texto:hover {
+  color: var(--primary);
+  background-color: rgba(67, 97, 238, 0.1);
+}
+
+/* Sección Misión/Visión/Valores */
+.org-horizontal-datosestaticos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  margin: 40px auto;
+  max-width: 1200px;
+  padding-top: 60   px;
+}
+
+.objs-org-horizontal-datosestaticos {
+  flex: 1;
+  min-width: 300px;
+  background: var(--primary1);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 25px;
+}
+
+.Titulo-menor {
+  color: var(--primary);
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+#imagenlink{
+width:5rem;
+}
+/* Lista de valores sin puntos */
+.objs-org-horizontal-datosestaticos ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.objs-org-horizontal-datosestaticos ul li {
+  margin-bottom: 10px;
+  padding-left: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Sección Origen */
+section:nth-of-type(2) {
+  background-color: --;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+section:nth-of-type(2) p {
+  max-width: 800px;
+  margin: 20px auto 0;
+}
+
+.org-horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.org-horizontal > h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.objs-org-horizontal {
+  flex: 1;
+  min-width: 200px;
+  max-width: 250px;
+}
+
+.objs-org-horizontal img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  border-bottom: 3px solid var(--primary);
+}
+
+/* Footer con ID específico */
+.footer-principal {
+  background-color: var(--primary2);
+  color: black;
+  padding: 50px 20px;
+  text-align: center;
+}
+#Integrantes{
+  gap: 0;
+}
+#Integrantes-1{
+  background-color: var(--primary1);
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin-bottom: 0;
+}
+#Integrantes-2{
+  margin-top: 0;
+  background-color:var(--secondary2);
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+#footer-principal {
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.text-img-horizontal {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.text-img-horizontal img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+}
+
+#footer-principal .objs-org-horizontal img {
+  height: 40px;
+  width: auto;
+  opacity: 0.9;
+  border: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header-web {
+    padding: 15px;
+  }
+  
+  #lista-nav {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  
+  .org-horizontal-datosestaticos,
+  .org-horizontal {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .objs-org-horizontal-datosestaticos,
+  .objs-org-horizontal {
+    min-width: 100%;
+    max-width: 100%;
+  }
+  
+  #footer-principal {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
