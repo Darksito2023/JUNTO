@@ -1,0 +1,485 @@
+/* Estilos generales */
+
+* {
+    box-sizing: border-box; /* Asegura que padding y border se incluyan en el tamaño total */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: black; /* Color preestablecido */
+    background-color: #FBF7EA; /* Color preestablecido */
+    min-height: 100vh; /* Asegura que el body ocupe al menos el 100% de la altura del viewport */
+    display: flex; /* Habilita Flexbox para el body */
+    flex-direction: column; /* Apila los elementos hijos (header, main, footer) verticalmente */
+}
+
+/* Estilos para la barra de navegación */
+header nav {
+    background-color: #D2D240; /* Color preestablecido */
+    padding: 10px;
+    width: 100%;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around; /* Cambiado a space-around para distribuir mejor los elementos */
+    align-items: center;
+    margin: 0 auto; /* Centra el menú de navegación */
+    padding: 0;
+    max-width: 1200px; /* Ancho máximo para la barra de navegación */
+}
+
+header nav ul li {
+    margin-right: 0; /* Eliminar el margen fijo, space-around lo manejará */
+    margin: 0 15px; /* Un poco de margen entre los ítems */
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0); /* Color preestablecido */
+    font-size: 1rem;
+    font-weight: 600;
+    transition: color 0.3s ease; /* Añadido ease para una transición más suave */
+    padding: 5px 10px; /* Añadido padding para mejorar el área de clic */
+    border-radius: 5px; /* Para un sutil efecto de fondo en hover */
+}
+
+header nav ul li a:hover {
+    color: #506391; /* Color preestablecido */
+    background-color: rgba(80, 99, 145, 0.1); /* Fondo sutil para el hover */
+}
+
+header nav ul li img{
+    width: 60px; /* Aumentado ligeramente para mejor visibilidad, puedes ajustar a 50px si prefieres */
+    height: auto;
+    border-radius: 50%; /* Rounded logo */
+    vertical-align: middle; /* Alinea el logo con el texto de la nav */
+}
+
+
+/* Main content */
+main {
+    flex: 1; /* CLAVE para el sticky footer: hace que el main se estire y empuje el footer hacia abajo */
+    padding: 20px 0; /* Espacio superior e inferior para el contenido principal */
+    display: flex; /* Convierte main en un contenedor flex */
+    flex-direction: column; /* Organiza las secciones dentro de main en columna */
+    align-items: center; /* Centra horizontalmente las secciones dentro de main */
+    width: 100%; /* Asegura que main ocupe todo el ancho disponible */
+}
+
+/* Estilos para sec0 (Unirse al Taller) */
+.sec0 {
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    margin: 20px 0 30px 0; /* Margen superior e inferior para la sección */
+    background-color: #307FD9; /* Color preestablecido */
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1.5rem; /* El tamaño de fuente es para el contenido */
+    max-width: 800px; /* Ancho máximo */
+    width: 90%; /* Ancho responsivo */
+}
+
+.sec0 button {
+    background-color: transparent; /* Hace el botón transparente para que el fondo de .sec0 se vea */
+    border: none;
+    padding: 0; /* Elimina el padding del botón, el enlace tendrá el padding */
+    margin: 0;
+    cursor: pointer;
+    width: 100%; /* Asegura que el botón ocupe el ancho del contenedor */
+}
+
+.sec0 button a{
+    color: white; /* Color preestablecido */
+    font-size: 1.5rem; /* Color preestablecido */
+    text-decoration: none;
+    padding: 10px 15px; /* El padding se aplica al enlace, haciendo clic más grande */
+    border-radius: 5px;
+    display: block; /* Para que el padding y el ancho funcionen en el enlace */
+    text-align: center;
+}
+
+
+/* Estilos para sec1 (Ver instructores, Ver tu historial) */
+.sec1 {
+    display: flex;
+    justify-content: space-around; /* Distribuir los elementos con espacio */
+    align-items: center;
+    margin: 30px auto; /* Centra y ajusta el margen superior/inferior */
+    gap: 20px;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    max-width: 900px; /* Ancho máximo para esta sección */
+    width: 90%;
+}
+
+/* Estilos comunes para los bloques dentro de sec1 (bienvenida, verinstructores, historial) */
+.bienvenida,
+.verinstructores, /* Añadida la clase corregida */
+.historial {
+    flex: 1; /* Permite que los elementos se distribuyan equitativamente */
+    min-width: 250px; /* Ancho mínimo para evitar que se hagan muy pequeños */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* Estilos comunes para los botones de .verinstructores y .historial */
+/* Se agrupan los selectores para evitar repetición de código */
+.verinstructores button,
+.historial button {
+    background-color: #9CD1FC; /* Color preestablecido */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.verinstructores button:hover,
+.historial button:hover {
+    background-color: #7BB9E8; /* Un tono un poco más oscuro para hover */
+}
+
+/* Estilos comunes para los enlaces dentro de los botones de .verinstructores y .historial */
+.verinstructores a,
+.historial a {
+    color: #FFFFFF; /* Color preestablecido */
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: block; /* Para que el padding del botón se aplique al enlace */
+}
+
+
+/* Estilos para la sección sec2 (CHATEA, NOTIFICACIÓN, NOTICIAS) */
+.sec2 {
+    display: flex;
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    gap: 20px;
+    margin: 50px auto 30px auto; /* Centra la sección y ajusta márgenes */
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan */
+    max-width: 900px; /* Ancho máximo para esta sección */
+    width: 90%;
+}
+
+.sec2 section {
+    background-color: #506391; /* Color preestablecido */
+    color: #FFFFFF; /* Color preestablecido */
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+    max-width: 280px; /* Ajustado el ancho máximo para que quepan 3 en línea en pantallas más grandes */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Se cambia de 'space-between' a 'center' para centrar la imagen y el texto */
+    gap: 10px;
+    height: 300px; /* Mantiene la altura uniforme */
+    box-sizing: border-box; /* Asegura que el padding se incluya en la altura */
+}
+
+.sec2 img {
+    width: 100px; /* Tamaño preestablecido */
+    height: 100px; /* Tamaño preestablecido */
+    object-fit: cover;
+    margin-top: auto; /* Empuja la imagen hacia el centro superior */
+    margin-bottom: auto; /* Empuja la imagen hacia el centro inferior */
+}
+
+.sec2 button {
+    background-color: transparent; /* Hace el botón transparente */
+    color: #FFFFFF; /* Color preestablecido */
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    width: 100%; /* El botón ocupa todo el ancho de su contenedor */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sec2 button:hover {
+    background-color: rgba(0, 0, 0, 0.2); /* Efecto hover sutil */
+}
+
+.sec2 a {
+    color: #FFFFFF; /* Color preestablecido */
+    text-decoration: none;
+    font-size: 1rem;
+    display: block; /* Para que el padding y width funcionen */
+    width: 100%; /* El enlace ocupa todo el ancho del botón */
+    text-align: center;
+}
+
+/* Estilos para sec3 (TALLERES PARA HOY) */
+.sec3{
+    display: flex;
+    justify-content: center; /* Centra el contenido */
+    align-items: center; /* Centra verticalmente */
+    margin: 30px auto; /* Centra y ajusta el margen superior/inferior */
+    background-color: #9CD1FC; /* Color de fondo */
+    color: #FFFFFF; /* Color de texto */
+    padding: 20px 30px; /* Aumenta el alto del botón */
+    border-radius: 5px;
+    font-size: 1.5rem;
+    max-width: 900px; /* Ancho máximo similar a las otras secciones */
+    width: 90%; /* Ancho responsivo */
+    box-sizing: border-box;
+    gap: 20px; /* Espacio entre el texto y la imagen */
+}
+
+
+.sec3-inner {
+    flex: 1; /* Permite que los elementos se distribuyan equitativamente */
+    min-width: 250px; /* Ancho mínimo para evitar que se hagan muy pequeños */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.sec3-inner button{
+    background-color: #9CD1FC; /* Color preestablecido */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sec3-inner button:hover {
+    background-color: #7BB9E8; /* Un tono un poco más oscuro para hover */
+}
+
+
+.sec3-inner a {
+    color: #FFFFFF; /* Color preestablecido */
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: block; /* Para que el padding del botón se aplique al enlace */
+}
+
+.sec3 img{
+    width: 50px; /* Tamaño preestablecido */
+    height: 50px; /* Tamaño preestablecido */
+    object-fit: cover;
+    margin-top: 10px; /* Espacio entre el texto y la imagen */
+    /* margin-bottom: 0; */ /* Asegúrate de que no tenga margen inferior indeseado */
+}
+
+/* Estilos para cerrarsesion */
+.cerrarsesion{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    margin: 20px auto 30px auto; /* Centra y ajusta márgenes */
+    background-color: #506391; /* Color preestablecido */
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    max-width: 800px; /* Ancho máximo */
+    width: 90%; /* Ancho responsivo */
+    box-sizing: border-box;
+}
+
+.cerrarsesion button {
+    background-color: transparent; /* Hace el botón transparente */
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    width: 100%;
+}
+
+.cerrarsesion button a{
+    color: white; /* Color preestablecido */
+    font-size: 1.5rem;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: block; /* Para que el padding funcione en todo el área del enlace */
+    width: 100%;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: #D2D240; /* Amarillo mostaza */
+    color: black; /* Texto general del footer en negro para contraste */
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: auto;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.footer-main-content {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las columnas se envuelvan en pantallas pequeñas */
+    justify-content: space-around; /* Distribuye el espacio entre las secciones */
+    max-width: 1200px; /* Ancho máximo para el contenido del footer */
+    margin: 0 auto; /* Centra el contenedor del footer */
+    gap: 30px; /* Espacio entre las columnas */
+    padding: 10px 0; /* Padding interno para separación del borde del footer */
+}
+
+.footer-section {
+    flex: 1; /* Permite que cada sección crezca y se encoja */
+    min-width: 200px; /* Ancho mínimo para cada columna antes de envolverse */
+    margin-bottom: 20px; /* Espacio inferior para cuando las columnas se apilan */
+    text-align: left; /* Alinea el texto a la izquierda dentro de cada sección */
+}
+
+.footer-section h4 {
+    color: #307FD9; /* Azul fuerte para los títulos */
+    margin-bottom: 15px;
+    font-size: 1.3em;
+    border-bottom: 1px solid rgba(48, 127, 217, 0.3); /* Línea sutil bajo el título */
+    padding-bottom: 5px;
+}
+
+/* Estilos para la sección de contacto */
+.contact-info .contact-item {
+    display: flex;
+    align-items: flex-start; /* Alinea el icono y el texto arriba */
+    margin-bottom: 10px;
+}
+
+.contact-info .contact-item i {
+    font-size: 1.2em;
+    margin-right: 10px;
+    color: #028490; /* Azul verdoso para los iconos de contacto (Font Awesome) */
+    flex-shrink: 0; /* Evita que el icono se encoja */
+}
+
+.contact-info .contact-item p {
+    margin: 0;
+    line-height: 1.4;
+    color: #333; /* Texto más oscuro para legibilidad */
+}
+
+/* Estilos para los enlaces legales */
+.footer-links a {
+    display: block; /* Cada enlace en su propia línea */
+    color: #555; /* Un gris oscuro para los enlaces */
+    text-decoration: none;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #307FD9; /* Azul al pasar el ratón */
+    text-decoration: underline;
+}
+
+
+.social-icons-group {
+    display: flex;
+    gap: 15px; /* Espacio entre los iconos */
+    margin-top: 10px;
+}
+
+.social-icons-group a {
+    display: flex; /* Para centrar la imagen si es necesario */
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icons-group .social-icon { /* La clase 'social-icon' aplicada a las IMG */
+    width: 35px; /* Tamaño de tus iconos de redes sociales */
+    height: 35px;
+    transition: transform 0.2s ease;
+}
+
+.social-icons-group .social-icon:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el ratón */
+}
+
+/* Estilos para el botón del footer (Contáctanos, Privacidad) */
+.footer-button {
+    background-color: #028490; /* Azul verdoso para el botón */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-top: 15px;
+    margin-right: 10px; /* Espacio entre botones si hay varios */
+    transition: background-color 0.3s ease;
+}
+
+.footer-button:hover {
+    background-color: #04A6B5;
+}
+
+.footer-button a {
+    color: inherit; /* Hereda el color blanco del botón */
+    text-decoration: none;
+}
+
+/* Estilos para la sección de marca y copyright */
+.footer-brand {
+    text-align: center; /* Centra el contenido de esta sección */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinea items al centro horizontalmente */
+    justify-content: center; /* Centra items verticalmente */
+}
+
+.footer-brand img {
+    max-width: 80px; /* Tamaño del logo en el footer */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.footer-brand p {
+    margin: 5px 0;
+    color: #333;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.footer-brand small {
+    display: block;
+    margin-top: 5px;
+    color: #777;
+    font-size: 0.85em;
+}
+
+/* Media Queries para Responsividad del Footer */
+@media (max-width: 768px) {
+    .footer-main-content {
+        flex-direction: column; /* Apila las columnas verticalmente */
+        align-items: center; /* Centra las columnas apiladas */
+        gap: 20px;
+    }
+
+    .footer-section {
+        width: 90%; /* Ocupa casi todo el ancho disponible */
+        min-width: unset; /* Reinicia el min-width */
+        text-align: center; /* Centra el texto en columnas apiladas */
+    }
+
+    .footer-section h4 {
+        border-bottom: none; /* Quita la línea de abajo en móvil para un look más limpio */
+        padding-bottom: 0;
+    }
+
+    .social-icons-group {
+        justify-content: center; /* Centra los iconos sociales */
+    }
+
+    .contact-info .contact-item {
+        justify-content: center; /* Centra los elementos de contacto */
+        text-align: center; /* Centra el texto del contacto */
+    }
+}
